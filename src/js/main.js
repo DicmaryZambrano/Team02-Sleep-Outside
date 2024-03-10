@@ -1,6 +1,6 @@
 import ProductList from "./ProductList.mjs";
 
-const productCardFunc = (product) => {
+const productCardFunc = function (product) {
   return ` 
   <li class="product-card">
     <a href="product_pages/index.html?product=${product.Id}">
@@ -16,6 +16,6 @@ const productCardFunc = (product) => {
   `;
 };
 
-const productList = new ProductList("tents",".product-list",productCardFunc);
+const productList = new ProductList("tents", ".product-list", productCardFunc);
 
 productList.init();
