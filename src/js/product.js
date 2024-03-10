@@ -7,3 +7,4 @@ const dataSource = new ProductData("tents");
 
 const product = new ProductDetails(productId, dataSource);
 product.init();
+//Working on Product
