@@ -8,18 +8,18 @@ export default class ProductDetails {
   }
   addToCart() {
     // Retrieve the current cart from localStorage
-    let cart = getLocalStorage("so-cart");
-    if (!cart) {
-      // If there's no cart, initialize it as an empty array
-      cart = [];
-    } else if (!Array.isArray(cart)) {
-      // If the retrieved cart is not an array, convert it into an array
-      cart = [cart];
+    let cart = getLocalStorage("so-cart") || [];
+
+    // Check if the product is already in the cart
+    const existingItemIndex = cart.findIndex((item) => item.Id === this.product.Id);
+
+    if (existingItemIndex !== -1) {
+      cart[existingItemIndex].Quantity += 1;
+    } else {
+      const newItem = { ...this.product, Quantity: 1 };
+      cart.push(newItem);
     }
-    
-    // Add the new product to the cart array
-    cart.push(this.product);
-    
+
     // Save the updated cart back to localStorage
     setLocalStorage("so-cart", cart);
   }
