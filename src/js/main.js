@@ -1,4 +1,7 @@
 import ProductList from "./ProductList.mjs";
+import { loadHeaderFooter } from "./utils.mjs";
+
+loadHeaderFooter("#main-header","#main-footer","../partials/header.html","../partials/footer.html");
 
 const productCardFunc = function (product) {
   return ` 
