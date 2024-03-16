@@ -28,3 +28,48 @@ export function getParam(param) {
   const product = urlParams.get(param)
   return product
 }
+// render html with a template function
+export function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = false) {
+  const targetElement = document.querySelector(parentElement);
+
+  if (clear) {
+    targetElement.innerHTML = ""; // Clear out the contents if clear is true
+  }
+
+  const htmlStrings = list.map(templateFn);
+  targetElement.insertAdjacentHTML(position, htmlStrings.join(''));
+}
+// render html with a template function
+export function renderWithTemplate(template, parentElement) {
+  const targetElement = document.querySelector(parentElement);
+  targetElement.insertAdjacentHTML("afterbegin", template);
+}
+
+// load the header and footer
+export async function loadTemplate(path) {
+  const html = await getTemplate(path)
+  const template = document.createElement('template');
+  template.innerHTML = html;
+  return html;
+}
+// load the header and footer
+export async function loadHeaderFooter(headerId,footerId,headerDom,footerDom) {
+  const header = await loadTemplate(headerDom)
+  const footer =  await loadTemplate(footerDom)
+
+  renderWithTemplate(header, headerId)
+  renderWithTemplate(footer, footerId)
+}
+// fetch DOM from partials
+function getTemplate(path) {
+  return fetch(path)
+    .then(convertToText)
+    .then((data) => data);
+}
+function convertToText(res) {
+  if (res.ok) {
+    return res.text();
+  } else {
+    throw new Error("Bad Response");
+  }
+}
