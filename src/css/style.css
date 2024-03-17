@@ -85,7 +85,7 @@ header {
   margin-top: -1.3em;
 }
 
-.logo--square>div {
+.logo--square > div {
   margin-top: -1.7em;
 }
 
@@ -246,7 +246,6 @@ footer {
   font-size: var(--small-font);
   padding: 1em;
 }
-
 
 /*Shopping Cart Animation*/
 

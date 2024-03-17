@@ -1,11 +1,15 @@
 import { loadHeaderFooter } from "./utils.mjs";
 import ShoppingCart from "./ShoppingCart.mjs";
 
-loadHeaderFooter("#main-header","#main-footer","../partials/headerInternal.html","../partials/footer.html");
+loadHeaderFooter(
+  "#main-header",
+  "#main-footer",
+  "../partials/headerInternal.html",
+  "../partials/footer.html",
+);
 
 const cartTemplate = function cartItemTemplate(item) {
-  const newItem = 
-  `<li class="cart-card divider">
+  const newItem = `<li class="cart-card divider">
     <a href="#" class="cart-card__image">
       <img
         src="${item.Images.PrimaryMedium}"
@@ -21,7 +25,7 @@ const cartTemplate = function cartItemTemplate(item) {
   </li>`;
 
   return newItem;
-}
+};
 
-const shoppingCart = new ShoppingCart("so-cart",".product-list",cartTemplate);
+const shoppingCart = new ShoppingCart("so-cart", ".product-list", cartTemplate);
 shoppingCart.init();
