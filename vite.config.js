@@ -12,7 +12,7 @@ export default defineConfig({
         cart: resolve(__dirname, "src/cart/index.html"),
         checkout: resolve(__dirname, "src/checkout/index.html"),
         product: resolve(__dirname, "src/product_pages/index.html"),
-        product1: resolve(__dirname, "src/product_pages/marmot-ajax-3.html"),
+        listing: resolve(__dirname, "src/product_listing/index.html"),
       },
     },
   },

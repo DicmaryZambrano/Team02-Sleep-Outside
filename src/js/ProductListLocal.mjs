@@ -1,11 +1,11 @@
-import ProductData from "./ProductData.mjs";
+import ProductData from "./ProductDataLocal.mjs";
 import { renderListWithTemplate } from "./utils.mjs";
 
 export default class ProductList {
-  constructor(category, dataSource, listElement, productCardTemplate, filter= true) {
+  constructor(category, listElement, productCardTemplate, filter= true) {
     this.category = category;
-    this.dataSource = dataSource;
     this.products = [];
+    this.dataSource;
     this.listElement = listElement;
     this.productCardTemplate = productCardTemplate;
     this.filter = filter;
@@ -33,7 +33,8 @@ export default class ProductList {
   }
 
   async init() {
-    this.products = await this.dataSource.getData(this.category);
+    this.dataSource = new ProductData(this.category);
+    this.products = await this.dataSource.getData();
     if (this.filter) {
       this.filterProducts()
     }

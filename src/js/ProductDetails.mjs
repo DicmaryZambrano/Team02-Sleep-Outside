@@ -1,10 +1,11 @@
 import { setLocalStorage, getLocalStorage } from './utils.mjs';
 
 export default class ProductDetails {
-  constructor(productId, dataSource) {
+  constructor(productId, dataSource, productDetailsTemplate) {
     this.productId = productId;
     this.product = {};
     this.dataSource = dataSource;
+    this.productDetailsTemplate = productDetailsTemplate;
   }
   addToCart() {
     // Retrieve the current cart from localStorage
@@ -25,7 +26,7 @@ export default class ProductDetails {
   }
 
   renderProductDetails() {
-    document.querySelector(".product-detail").innerHTML = productDetailsTemplate(this.product);
+    document.querySelector(".product-detail").innerHTML = this.productDetailsTemplate(this.product);
   }
 
   async init() {
@@ -39,30 +40,4 @@ export default class ProductDetails {
     document.getElementById('addToCart')
       .addEventListener('click', this.addToCart.bind(this));
     }
-}
-
-function productDetailsTemplate(product) {
-  const newProduct = 
-  `
-      <h3>${product.Brand.Name}</h3>
-
-      <h2 class="divider">${product.NameWithoutBrand}</h2>
-
-      <img
-        class="divider"
-        src="${product.Image}"
-        alt="${product.Name}"
-      />
-
-      <p class="product-card__price">${product.FinalPrice}</p>
-
-      <p class="product__color">${product.Colors[0].ColorName}</p>
-
-      <p class="product__description">${product.DescriptionHtmlSimple}</p>
-
-      <div class="product-detail__add">
-        <button id="addToCart">Add to Cart</button>
-      </div>
-    `
-  return newProduct;
 }

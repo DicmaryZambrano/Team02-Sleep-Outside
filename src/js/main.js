@@ -1,24 +1,22 @@
-import ProductList from "./ProductList.mjs";
+import ProductListLocal from "./ProductListLocal.mjs";
 import { loadHeaderFooter } from "./utils.mjs";
 
 loadHeaderFooter("#main-header","#main-footer","../partials/header.html","../partials/footer.html");
 
-const productCardFunc = function (product) {
+const categoryCardFunc = function (category) {
   return ` 
   <li class="product-card">
-    <a href="product_pages/index.html?product=${product.Id}">
+    <a href="product_listing/index.html?category=${category.Path}">
       <img
-        src=${product.Image}
-        alt=${product.Name}
+        src=${category.Image}
+        alt=${category.Alt}
       />
-      <h3 class="card__brand">${product.Brand.Name}</h3>
-      <h2 class="card__name">${product.NameWithoutBrand}</h2>
-      <p class="product-card__price">${product.ListPrice}</p>
+      <h2 class="card__name">${category.Name}</h2>
     </a>
   </li>
   `;
 };
 
-const productList = new ProductList("tents", ".product-list", productCardFunc);
+const productList = new ProductListLocal("product-categories", ".product-list", categoryCardFunc);
 
 productList.init();
