@@ -2,7 +2,12 @@ import { loadHeaderFooter, getParam } from "./utils.mjs";
 import ProductList from "./ProductList.mjs";
 import ProductData from "./ProductData.mjs";
 
-loadHeaderFooter("#main-header","#main-footer","../partials/headerInternal.html","../partials/footer.html");
+loadHeaderFooter(
+  "#main-header",
+  "#main-footer",
+  "../partials/headerInternal.html",
+  "../partials/footer.html",
+);
 
 const productCardFunc = function (product) {
   return ` 
@@ -22,14 +27,19 @@ const productCardFunc = function (product) {
 
 function formatCategory(category) {
   return category
-    .split('-') 
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 }
 
 const productCategory = getParam("category");
 const dataSource = new ProductData();
-const productList = new ProductList(productCategory, dataSource, ".product-list", productCardFunc);
+const productList = new ProductList(
+  productCategory,
+  dataSource,
+  ".product-list",
+  productCardFunc,
+);
 
 const categoryElement = document.querySelector(".product-category");
 categoryElement.append(formatCategory(productCategory));

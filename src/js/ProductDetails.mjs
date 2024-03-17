@@ -8,6 +8,8 @@ export default class ProductDetails {
     this.productDetailsTemplate = productDetailsTemplate;
   }
   addToCart() {
+    cartIconAnimation()
+    
     // Retrieve the current cart from localStorage
     let cart = getLocalStorage("so-cart") || [];
 
@@ -40,4 +42,14 @@ export default class ProductDetails {
     document.getElementById('addToCart')
       .addEventListener('click', this.addToCart.bind(this));
     }
+}
+
+function cartIconAnimation() {
+  const cartIcon = document.querySelector('.cart');
+
+  cartIcon.classList.add('cart-icon-animate');
+
+  setTimeout(() => {
+    cartIcon.classList.remove('cart-icon-animate');
+  }, 500); // Match the duration of the animation
 }

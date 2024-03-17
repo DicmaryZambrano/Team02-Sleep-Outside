@@ -1,7 +1,12 @@
 import ProductListLocal from "./ProductListLocal.mjs";
 import { loadHeaderFooter } from "./utils.mjs";
 
-loadHeaderFooter("#main-header","#main-footer","../partials/header.html","../partials/footer.html");
+loadHeaderFooter(
+  "#main-header",
+  "#main-footer",
+  "../partials/header.html",
+  "../partials/footer.html",
+);
 
 const categoryCardFunc = function (category) {
   return ` 
@@ -17,6 +22,10 @@ const categoryCardFunc = function (category) {
   `;
 };
 
-const productList = new ProductListLocal("product-categories", ".product-list", categoryCardFunc);
+const productList = new ProductListLocal(
+  "product-categories",
+  ".product-list",
+  categoryCardFunc,
+);
 
 productList.init();

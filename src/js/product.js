@@ -1,12 +1,16 @@
 import ProductData from "./ProductData.mjs";
 import ProductDetails from "./ProductDetails.mjs";
-import { getParam,loadHeaderFooter } from "./utils.mjs";
+import { getParam, loadHeaderFooter } from "./utils.mjs";
 
-loadHeaderFooter("#main-header","#main-footer","../partials/headerInternal.html","../partials/footer.html");
+loadHeaderFooter(
+  "#main-header",
+  "#main-footer",
+  "../partials/headerInternal.html",
+  "../partials/footer.html",
+);
 
 const productTemplate = function productDetailsTemplate(product) {
-  const newProduct = 
-  `
+  const newProduct = `
       <h3>${product.Brand.Name}</h3>
 
       <h2 class="divider">${product.NameWithoutBrand}</h2>
@@ -26,12 +30,16 @@ const productTemplate = function productDetailsTemplate(product) {
       <div class="product-detail__add">
         <button id="addToCart">Add to Cart</button>
       </div>
-    `
+    `;
   return newProduct;
-}
+};
 
 const productId = getParam("product");
 const dataSource = new ProductData();
 
-const product = new ProductDetails(productId, dataSource, productTemplate);
-product.init();
+const productDetails = new ProductDetails(
+  productId,
+  dataSource,
+  productTemplate,
+);
+productDetails.init();
