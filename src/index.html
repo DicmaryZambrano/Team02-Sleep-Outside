@@ -20,6 +20,16 @@
         <div class="logo logo--square">
           <img src="images/noun_Tent_2517.svg" alt="tent image for logo" />
           <div>Sleep<span class="highlight">Outside</span></div>
+          <!-- Inputing the feature for the first time vistior -->
+          <div id="registerModal" style="display:none;">
+            <div class="modal-content">
+              <span class="close-button">×</span>
+              <h2>Join Our Giveaway!</h2>
+              <p>Register with our site and get a chance to win exciting prizes!</p>
+              <!-- Include a registration form or link here -->
+            </div>
+          </div>
+          
         </div>
       </div>
       <section class="mission">
@@ -35,6 +45,15 @@
         <h2>Top Products</h2>
         <ul class="product-list"></ul>
       </section>
+      <section class="product-comments">
+  <h2>Customer Comments</h2>
+  <ul id="commentsList"></ul>
+  <form id="commentForm">
+    <textarea id="commentText" placeholder="Write a comment..."></textarea>
+    <button type="submit">Post Comment</button>
+  </form>
+</section>
+
     </main>
     <footer id="main-footer"></footer>
   </body>
