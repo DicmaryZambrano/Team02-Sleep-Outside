@@ -1,4 +1,31 @@
-import { renderListWithTemplate, getLocalStorage } from "./utils.mjs";
+import { getLocalStorage } from "./utils.mjs";
+import ExternalServices from "./ExternalServices.mjs";
+
+const services = new ExternalServices();
+
+function formDataToJSON(formElement) {
+  const formData = new FormData(formElement),
+    convertedJSON = {};
+
+  formData.forEach(function (value, key) {
+    convertedJSON[key] = value;
+  });
+
+  return convertedJSON;
+}
+
+function packageItems(items) {
+  // convert the list of products from localStorage to the simpler form required for the checkout process. Array.map would be perfect for this.
+  var checkoutItems = items.map((item) => {
+    return {
+      id: item.Id,
+      price: item.FinalPrice,
+      name: item.Name,
+      quantity: item.Quantity,
+    };
+  });
+  return checkoutItems
+}
 
 export default class CheckoutProcess {
   constructor(storage, listElement) {
@@ -14,6 +41,21 @@ export default class CheckoutProcess {
   init() {
     this.list = getLocalStorage(this.storage) || [];
     this.calculateItemSummary()
+  }
+  
+  async checkout(form) {
+    const json = formDataToJSON(form);
+    json.orderDate = new Date();
+    json.orderTotal = this.orderTotal;
+    json.tax = this.tax;
+    json.shipping = this.shipping;
+    json.items = packageItems(this.list);
+    try {
+      const res = await services.checkout(json);
+      console.log(res);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   calculateItemSummary() {

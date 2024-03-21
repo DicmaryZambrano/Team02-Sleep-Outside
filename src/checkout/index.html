@@ -19,7 +19,7 @@
     <main class="divider">
       <section class="products">
         <h2>Review & Place your Order</h2>
-        <form action="">
+        <form name="checkout">
           <fieldset>
               <legend>Personal Information:</legend>
               <label for="fname">First name:</label><br>
@@ -41,13 +41,13 @@
           <fieldset>
             <legend>Payment</legend>
             <label for="credit">Credit Card Number:</label><br>
-            <input type="number" id="credit" name="credit" required><br><br>
+            <input type="number" id="credit" name="credit" value="1234123412341234" required><br><br>
             <label for="exp">Expiration Date:</label><br>
-            <input type="number" id="exp" name="exp" required><br><br>
+            <input type="date" id="exp" name="exp" required><br><br>
             <label for="security">Security Code:</label><br>
-            <input type="number" id="security" name="security" required><br><br>
+            <input type="number" id="security" name="security" value="123" required><br><br>
           </fieldset>
-          <input type="submit" value="Checkout">
+          <input type="submit" value="Checkout" id="checkoutSubmit">
         </form> 
       </section>
       <section class="summary">
