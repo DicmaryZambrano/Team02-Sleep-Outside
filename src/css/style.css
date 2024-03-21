@@ -85,7 +85,7 @@ header {
   margin-top: -1.3em;
 }
 
-.logo--square > div {
+.logo--square>div {
   margin-top: -1.7em;
 }
 
@@ -265,4 +265,8 @@ footer {
 
 .cart-icon-animate {
   animation: pulse 0.5s ease;
+}
+
+.hide {
+  display: none;
 }

@@ -8,18 +8,64 @@
 
     <title>Sleep Outside | Checkout</title>
 
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <script type="module" src="../js/checkout.js"></script>
   </head>
 
   <body>
-    <header class="divider main-header"></header>
+    <header class="divider" id="main-header"></header>
 
     <main class="divider">
       <section class="products">
         <h2>Review & Place your Order</h2>
+        <form action="">
+          <fieldset>
+              <legend>Personal Information:</legend>
+              <label for="fname">First name:</label><br>
+              <input type="text" id="fname" name="fname" required><br>
+              <label for="lname">Last name:</label><br>
+              <input type="text" id="lname" name="lname" required><br><br>
+          </fieldset>
+          <fieldset>
+            <legend>Address</legend>
+            <label for="address">Street Address:</label><br>
+            <input type="text" id="address" name="address" required><br>
+            <label for="city">City:</label><br>
+            <input type="text" id="city" name="city" required><br><br>
+            <label for="state">State:</label><br>
+            <input type="text" id="state" name="state" required><br><br>
+            <label for="zip">Zip Code:</label><br>
+            <input type="number" id="zip" name="zip" required><br><br>
+          </fieldset>
+          <fieldset>
+            <legend>Payment</legend>
+            <label for="credit">Credit Card Number:</label><br>
+            <input type="number" id="credit" name="credit" required><br><br>
+            <label for="exp">Expiration Date:</label><br>
+            <input type="number" id="exp" name="exp" required><br><br>
+            <label for="security">Security Code:</label><br>
+            <input type="number" id="security" name="security" required><br><br>
+          </fieldset>
+          <input type="submit" value="Checkout">
+        </form> 
+      </section>
+      <section class="summary">
+        <div>
+          <p class="summary-subtotal"></p>
+        </div>
+        <div>
+          <p class="summary-tax"></p>
+        </div>
+        <div>
+          <p class="summary-shipping"></p>
+        </div>
+        <div>
+          <p class="summary-total"></p>
+        </div>
       </section>
     </main>
 
-    <footer class="main-footer"></footer>
+    <footer id="main-footer"></footer>
   </body>
 </html>
