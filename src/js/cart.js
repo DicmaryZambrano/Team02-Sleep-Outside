@@ -20,7 +20,7 @@ const cartTemplate = function cartItemTemplate(item) {
       <h2 class="card__name">${item.Name}</h2>
     </a>
     <p class="cart-card__color">${item.Colors[0].ColorName}</p>
-    <p class="cart-card__quantity">Quantity:${item.Quantity}</p>
+    <p class="cart-card__quantity"> <button class="cart-cart__x" data="${item.Id}">X</button> Quantity:${item.Quantity}</p>
     <p class="cart-card__price">$${item.FinalPrice}</p>
   </li>`;
 
