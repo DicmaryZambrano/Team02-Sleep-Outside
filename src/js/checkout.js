@@ -1,5 +1,5 @@
 import { loadHeaderFooter } from "./utils.mjs";
-import CheckoutProcess from './CheckoutProcess.mjs';
+import CheckoutProcess from "./CheckoutProcess.mjs";
 
 loadHeaderFooter(
   "#main-header",
@@ -8,7 +8,7 @@ loadHeaderFooter(
   "../partials/footer.html",
 );
 
-const checkoutProcess = new CheckoutProcess("so-cart",".summary")
+const checkoutProcess = new CheckoutProcess("so-cart", ".summary");
 
 checkoutProcess.init();
 

@@ -29,5 +29,3 @@ const cartTemplate = function cartItemTemplate(item) {
 
 const shoppingCart = new ShoppingCart("so-cart", ".product-list", cartTemplate);
 shoppingCart.init();
-
-
