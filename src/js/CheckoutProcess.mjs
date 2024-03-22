@@ -45,11 +45,12 @@ export default class CheckoutProcess {
   
   async checkout(form) {
     const json = formDataToJSON(form);
-    json.orderDate = new Date();
+    json.orderDate = new Date().toISOString();
     json.orderTotal = this.orderTotal;
     json.tax = this.tax;
     json.shipping = this.shipping;
     json.items = packageItems(this.list);
+    console.log(json)
     try {
       const res = await services.checkout(json);
       console.log(res);

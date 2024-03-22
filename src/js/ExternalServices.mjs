@@ -1,4 +1,5 @@
-const BASERURL = import.meta.env.VITE_SERVER_URL;
+const BASEURL = import.meta.env.VITE_SERVER_URL;
+
 function convertToJson(res) {
   if (res.ok) {
     return res.json();
@@ -13,23 +14,32 @@ export default class ExternalServices {
     // this.path = `../json/${this.category}.json`;
   }
   async getData(category) {
-    const response = await fetch(BASERURL + `/products/search/${category}`);
+    const response = await fetch(BASEURL + `/products/search/${category}`);
     const data = await convertToJson(response);
     return data.Result;
   }
   async findProductById(id) {
-    const response = await fetch(BASERURL + `/product/${id}`);
+    const response = await fetch(BASEURL + `/product/${id}`);
     const data = await convertToJson(response);
     return data.Result;
   }
   async checkout(payload) {
+    console.log(JSON.stringify(payload));
     const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
     };
-    return await fetch(BASERURL + "/checkout/", options).then(convertToJson);
+
+    try {
+        const response = await fetch(BASEURL + "/checkout/", options);
+        const data = await convertToJson(response); 
+        return data; 
+    } catch (error) {
+        console.error('Error:', error); // Log any errors to the console
+        throw error;
+    }
   }
 }
