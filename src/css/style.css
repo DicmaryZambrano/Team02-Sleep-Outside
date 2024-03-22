@@ -266,3 +266,7 @@ footer {
 .cart-icon-animate {
   animation: pulse 0.5s ease;
 }
+
+.hide {
+  display: none;
+}

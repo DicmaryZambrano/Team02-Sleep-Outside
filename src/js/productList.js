@@ -1,6 +1,6 @@
 import { loadHeaderFooter, getParam } from "./utils.mjs";
 import ProductList from "./ProductList.mjs";
-import ProductData from "./ProductData.mjs";
+import ExternalServices from "./ExternalServices.mjs";
 
 loadHeaderFooter(
   "#main-header",
@@ -33,7 +33,7 @@ function formatCategory(category) {
 }
 
 const productCategory = getParam("category");
-const dataSource = new ProductData();
+const dataSource = new ExternalServices();
 const productList = new ProductList(
   productCategory,
   dataSource,
