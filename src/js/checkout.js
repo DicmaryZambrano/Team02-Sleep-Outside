@@ -12,8 +12,13 @@ const checkoutProcess = new CheckoutProcess("so-cart", ".summary");
 
 checkoutProcess.init();
 
+const form = document.forms["checkout"];
+
 document.querySelector("#checkoutSubmit").addEventListener("click", (e) => {
   e.preventDefault();
 
-  checkoutProcess.checkout(document.forms["checkout"]);
+  if (form.checkValidity()) {
+    checkoutProcess.checkout(form);
+  }
+  form.reportValidity();
 });

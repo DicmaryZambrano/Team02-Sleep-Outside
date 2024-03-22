@@ -15,6 +15,9 @@ export default class ShoppingCart {
     if(cartItems.length != 0){
       const cartTotal = document.querySelector(".cart-footer");
       cartTotal.classList.remove("hide")
+
+      const cartCheckout = document.querySelector(".checkout");
+      cartCheckout.classList.remove("hide")
     }
 
     renderListWithTemplate(this.cartItemTemplate, this.listElement, cartItems);
