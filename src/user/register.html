@@ -1,0 +1,52 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sleep Outside | Register</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <script type="module" src="../js/register.js"></script>
+  </head>
+
+  <body>
+    <header class="divider" id="main-header"></header>
+    <main class="divider">
+        <section class="products">
+            <h2>Register to Sleep Outside</h2>
+            <form name="registerForm">
+              <fieldset>
+                <legend>Personal Information:</legend>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" placeholder="John" required><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" placeholder="jhondoe@email.com" required><br>
+              </fieldset>
+              <fieldset>
+                <legend>Password</legend>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" placeholder="Password" required><br>
+                <label for="confirmPassword">Confirm Password:</label><br>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Password" required><br>
+              </fieldset>
+              <fieldset>
+                  <legend>Address</legend>
+                  <label for="address">Address:</label><br>
+                  <input type="text" id="address" name="address" placeholder="La Naranjal" required><br>
+              </fieldset>
+              <fieldset>
+                  <legend>Avatar</legend>
+                  <label for="avatar">Avatar:</label><br>
+                  <input type="file" id="avatar" name="avatar" accept="image/*" required><br><br>
+              </fieldset>
+              <input type="submit" value="Register" id="registerSubmit" />
+            </form>
+        </section>
+    </main>
+    <footer id="main-footer"></footer>
+  </body>
+</html>

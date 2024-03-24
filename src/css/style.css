@@ -85,7 +85,7 @@ header {
   margin-top: -1.3em;
 }
 
-.logo--square > div {
+.logo--square>div {
   margin-top: -1.7em;
 }
 
@@ -113,6 +113,18 @@ button {
 
 /* Cart icon styles */
 .cart {
+  padding-top: 1em;
+  position: relative;
+  text-align: center;
+}
+
+.login {
+  padding-top: 1em;
+  position: relative;
+  text-align: center;
+}
+
+.register {
   padding-top: 1em;
   position: relative;
   text-align: center;
