@@ -118,6 +118,18 @@ button {
   text-align: center;
 }
 
+.login {
+  padding-top: 1em;
+  position: relative;
+  text-align: center;
+}
+
+.register {
+  padding-top: 1em;
+  position: relative;
+  text-align: center;
+}
+
 .cart svg {
   width: 25px;
 }
