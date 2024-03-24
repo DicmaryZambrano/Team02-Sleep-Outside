@@ -1,10 +1,35 @@
 const BASEURL = import.meta.env.VITE_SERVER_URL;
 
-function convertToJson(res) {
+async function convertToJson(res) {
+  const responseBody = await res.json();
   if (res.ok) {
-    return res.json();
+    return responseBody;
   } else {
-    throw new Error("Bad Response");
+    let errorMessages = [];
+
+    // Check if the responseBody has specific errors we're interested in
+    if (responseBody.cardNumber) {
+      errorMessages.push(`Card Number Error: ${responseBody.cardNumber}`);
+    }
+    if (responseBody.expiration) {
+      errorMessages.push(`Expiration Error: ${responseBody.expiration}`);
+    }
+    
+    // Fallback for generic or other specific errors
+    if (errorMessages.length === 0) {
+      if (responseBody.message) {
+        errorMessages.push(responseBody.message);
+      } else {
+        try {
+          // Attempt to use a stringified version of the response if available
+          errorMessages.push(JSON.stringify(responseBody));
+        } catch {
+          // Use a generic error message as a last resort
+          errorMessages.push('An unknown error occurred');
+        }
+      }
+    }
+    throw { name: 'servicesError', message: errorMessages };
   }
 }
 
@@ -24,7 +49,6 @@ export default class ExternalServices {
     return data.Result;
   }
   async checkout(payload) {
-    console.log(JSON.stringify(payload));
     const options = {
         method: "POST",
         headers: {
@@ -32,14 +56,8 @@ export default class ExternalServices {
         },
         body: JSON.stringify(payload),
     };
-
-    try {
-        const response = await fetch(BASEURL + "/checkout/", options);
-        const data = await convertToJson(response); 
-        return data; 
-    } catch (error) {
-        console.error('Error:', error); // Log any errors to the console
-        throw error;
-    }
+    const response = await fetch(BASEURL + "/checkout/", options);
+    const data = await convertToJson(response); 
+    return data; 
   }
 }

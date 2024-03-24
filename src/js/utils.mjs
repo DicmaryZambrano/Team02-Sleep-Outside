@@ -73,3 +73,33 @@ function convertToText(res) {
     throw new Error("Bad Response");
   }
 }
+// Custom Alert Message
+export function alertMessage(message, scroll = true) {
+  // Create element to hold our alert
+  const alert = document.createElement('div');
+  alert.classList.add('alert');
+  // Set the contents. Include a message and an X for closing the alert
+  alert.innerHTML = `${message} <span class="close-btn">&times;</span>`;
+  alert.addEventListener('click', function(e) {
+    if(e.target.classList.contains('close-btn')) { // Checks if the clicked element is our "X"
+      this.remove(); // or use main.removeChild(this) if this does not work in your environment
+    }
+  });
+
+  // Add the alert to the top of main
+  const main = document.querySelector('main');
+  main.prepend(alert);
+
+  // Make sure they see the alert by scrolling to the top of the window
+  if(scroll) {
+    window.scrollTo(0,0);
+  }
+}
+
+export function removeAllAlerts() {
+  // Select all elements with the class 'alert'
+  const alerts = document.querySelectorAll('.alert');
+
+  // Loop through the NodeList of alerts and remove each from the DOM
+  alerts.forEach(alert => alert.remove());
+}

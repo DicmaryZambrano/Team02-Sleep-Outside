@@ -27,7 +27,9 @@
               type="text"
               id="fname"
               name="fname"
-              value="Dicmary"
+              pattern="^[a-zA-Z\s'\-]{3,}$"
+              title="Ensure you are not using any special characters, min 3 characters"
+              placeholder="John"
               required
             /><br />
             <label for="lname">Last name:</label><br />
@@ -35,7 +37,9 @@
               type="text"
               id="lname"
               name="lname"
-              value="Zambrano"
+              pattern="^[a-zA-Z\s'\-]{3,}$"
+              title="Ensure you are not using any special characters, min 3 characters"
+              placeholder="Doe"
               required
             /><br /><br />
           </fieldset>
@@ -46,7 +50,9 @@
               type="text"
               id="street"
               name="street"
-              value="Pampanito"
+              pattern="^[a-zA-Z\s'\-]{3,}$"
+              title="Ensure you are not using any special characters, min 3 characters"
+              placeholder="La Naranjal"
               required
             /><br />
             <label for="city">City:</label><br />
@@ -54,7 +60,9 @@
               type="text"
               id="city"
               name="city"
-              value="Trujillo"
+              pattern="^[a-zA-Z\s'\-]{3,}$"
+              title="Ensure you are not using any special characters, min 3 characters"
+              placeholder="Trujillo"
               required
             /><br /><br />
             <label for="state">State:</label><br />
@@ -62,7 +70,9 @@
               type="text"
               id="state"
               name="state"
-              value="Trujillo"
+              pattern="^[a-zA-Z\s'\-]{3,}$"
+              title="Ensure you are not using any special characters, min 3 characters"
+              placeholder="Trujillo"
               required
             /><br /><br />
             <label for="zip">Zip Code:</label><br />
@@ -70,7 +80,9 @@
               type="text"
               id="zip"
               name="zip"
-              value="123"
+              pattern="^[0-9]+$"
+              title="Only enter numbers"
+              placeholder="1038"
               required
             /><br /><br />
           </fieldset>
@@ -81,14 +93,18 @@
               type="text"
               id="cardNumber"
               name="cardNumber"
-              value="1234123412341234"
+              pattern="^[0-9]{16}$"
+              title="Only enter numbers, 16 max"
+              placeholder="1234123412341234"
               required
             /><br /><br />
             <label for="expiration">Expiration Date:</label><br />
             <input
               id="expiration"
               name="expiration"
-              value="8/25"
+              pattern="(0[1-9]|1[0-2])\/(\d{2})"
+              placeholder="MM/YY"
+              title="Please enter a valid expiration date (MM/YY)"
               required
             /><br /><br />
             <label for="code">Security Code:</label><br />
@@ -96,7 +112,9 @@
               type="text"
               id="code"
               name="code"
-              value="123"
+              pattern="^[0-9]{3}$"
+              title="Only enter numbers, 3 max"
+              placeholder="123"
               required
             /><br /><br />
           </fieldset>
@@ -118,7 +136,6 @@
         </div>
       </section>
     </main>
-
     <footer id="main-footer"></footer>
   </body>
 </html>
