@@ -32,7 +32,7 @@ document.querySelector("#registerSubmit").addEventListener("click", (e) => {
   } else {
     if (avatarInput.files.length === 0) {
       removeAllAlerts();
-      alertMessage("Please upload an avatar.")
+      alertMessage("Please upload an avatar.");
     }
   }
   form.reportValidity();

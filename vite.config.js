@@ -17,7 +17,7 @@ export default defineConfig({
         login: resolve(__dirname, "src/user/login.html"),
         register: resolve(__dirname, "src/user/register.html"),
         login_success: resolve(__dirname, "src/user/loginSuccess.html"),
-        register_success: resolve(__dirname, "src/user/registerSuccess.html")
+        register_success: resolve(__dirname, "src/user/registerSuccess.html"),
       },
     },
   },
