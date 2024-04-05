@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnoTech Plus | Home</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../jS/main.js" type="module"></script>
+</head>
+<body>
+<header class="divider" id="main-header">
+    <h1>InnoTech Plus 11</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home Page</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <h2>Report Appliance Problem</h2>
+    <form id="reportForm" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Report Appliance Problem</legend>
+            <label for="problemDescription">Problem Description:</label>
+            <textarea id="problemDescription" name="problemDescription" rows="4" cols="50" placeholder="Enter problem description" required></textarea>
+        </fieldset>
+        <fieldset>
+            <legend>Attach Picture (Optional)</legend>
+            <label for="picture">Picture:</label>
+            <input type="file" id="picture" name="picture" accept="image/*">
+        </fieldset>
+        <button type="submit">Submit</button>
+    </form>
+    
+</main>
+</body>
+</html>

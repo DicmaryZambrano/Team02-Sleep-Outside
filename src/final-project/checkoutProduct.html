@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnoTech Plus | Home</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script type="module"  src="../js/main1.js" ></script>
+    <script type="module"  src="../js/listitem.mjs" ></script>
+</head>
+<body>
+    <header class="divider" id= "main-header">
+        <h1>InnoTech Plus</h1>
+        <nav>
+            <ul>
+                <li><a href="#search">Search</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+
+
+
+<section class="informations">
+
+ <form name="checkout">
+    <fieldset>
+      <legend>Personal Information:</legend>
+      <label for="fname">First name:</label><br />
+      <input
+        type="text"
+        id="fname"
+        name="fname"
+        pattern="^[a-zA-Z\s'\-]{3,}$"
+        title="Ensure you are not using any special characters, min 3 characters"
+        placeholder="Dan"
+        required
+      /><br />
+      <label for="lname">Last name:</label><br />
+      <input
+        type="text"
+        id="lname"
+        name="lname"
+        pattern="^[a-zA-Z\s'\-]{3,}$"
+        title="Ensure you are not using any special characters, min 3 characters"
+        placeholder="Abby"
+        required
+      /><br /><br />
+
+
+
+    
+      <legend>Address</legend>
+      <label for="street">Street Address:</label><br />
+      <input
+        type="text"
+        id="street"
+        name="street"
+        pattern="^[a-zA-Z\s'\-]{3,}$"
+        title="Ensure you are not using any special characters, min 3 characters"
+        placeholder="Delmas"
+        required
+      /><br />
+      <label for="city">City:</label><br />
+      <input
+        type="text"
+        id="city"
+        name="city"
+        pattern="^[a-zA-Z\s'\-]{3,}$"
+        title="Ensure you are not using any special characters, min 3 characters"
+        placeholder="Port-au-Prince"
+        required
+      /><br /><br />
+      <label for="state">State:</label><br />
+      <input
+        type="text"
+        id="state"
+        name="state"
+        pattern="^[a-zA-Z\s'\-]{3,}$"
+        title="Ensure you are not using any special characters, min 3 characters"
+        placeholder="Port-au-Prince"
+        required
+      /><br /><br />
+
+
+        
+            
+            
+
+
+
+        <fieldset>
+          
+        
+        <input type="submit" value="Checkout" id="checkoutSubmit" />
+      </form>
+    </section>
+    <section class="summary">
+      <div>
+        <p class="summary-subtotal"></p>
+      </div>
+      <div>
+        <p class="summary-tax"></p>
+      </div>
+      <div>
+        <p class="summary-shipping"></p>
+      </div>
+      <div>
+        <p class="summary-total"></p>
+      </div>
+    </section>
+</section>
+
+      
+    </fieldset>

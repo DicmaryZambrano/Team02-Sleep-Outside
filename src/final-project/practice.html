@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnoTech Plus | Home</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="../js/main1.js" type="module"></script>
+    <script src="../js/listitem.mjs" type="module"></script>
+</head>
+<body>
+    <header class="divider" id="main-header">
+        <h1>InnoTech Plus</h1>
+
+        <nav>
+            <ul>
+               
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <section id="search">
+        
+        <img src="/src/images/inno1.jfif" alt="networking" />
+        <h2>Find InnoTech plus</h2>
+        <form id="search-form">
+            <label for="location">Enter Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter your location">
+            <button type="submit">Search</button>
+        </form>
+        <div id="search-results"> </div>
+        <!-- search result will be displayed here-->
+    </section>
+    
+    
+    <main class="divider">
+
+      <h2>Review & Place your Order</h2>
+
+      <fieldset>
+        <legend>Choice Equipment</legend>
+        
+          
+            <div id="output">Total Price: <span id="totalPrice">$0.00</span></div>
+<div id="products">
+    <div class="product">
+        <img src="/src/images/router1.jfif" alt="Usb1">
+        <button class="productButton" data-price="10">Usb1 $10</button>
+    </div>
+    <div class="product">
+        <img src="/src/images/external.jfif" alt="Product 2">
+        <button class="productButton" data-price="20">External ($20)</button>
+    </div>
+    <div class="product">
+        <img src="/src/images/cable.jfif" alt="Product 3">
+        <button class="productButton" data-price="30">Cable ($30)</button>
+    </div>
+</div>
+        
+      </fieldset>
+
+      <div id="selected-items">
+        <h3>Selected Items:</h3>
+        <ul id="selected-items-list"></ul>
+        <p>Total Price: <span id="total-price">$0.00</span></p>
+      </div>
+    </main>
+
+    
+</body>
+</html>
